@@ -57,7 +57,8 @@ namespace MvcApp
                 }
                 catch (Exception)
                 {
-                    await ctx.Response.WriteAsync(ServiceLocator.BlobContainerName);
+                    ctx.Response.StatusCode = 404;
+                    await ctx.Response.WriteAsync("");
                 }
 
             });
